@@ -1,11 +1,9 @@
 const fs = require('fs');
 const download = require('download');
 const dist = './dist'
-const url = "https://hanyu-word-pinyin-short.cdn.bcebos.com/ju4.mp3"
 const pinyin = require("pinyin");
 let str = ''
 let resAry = []
-let test = []
 function handle(str) {
   return pinyin(str, {
     style: 2
@@ -47,9 +45,7 @@ ary.forEach(item => {
     }
   })
 })
-console.log(resAry);
 resAry.forEach(item => {
-  console.log(item);
   const testAry = ['1','2','3','4']
   if(!testAry.includes(item.charAt(item.length-1))){
     item+='5'
